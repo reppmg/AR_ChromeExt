@@ -13,5 +13,13 @@
 	{
 		"default_icon": "images/ext_logo.png",
 		"default_popup": "popup.html"
-	}
+	},
+	 "background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"permissions": [
+          "webRequest",
+          "https://tsdb.informatik.uni-rostock.de:8086"
+        ],
 }
