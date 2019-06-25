@@ -1,25 +1,26 @@
 {
-	"manifest_version": 2, //required
-	"version": "1.0", //required
-	"name": "Activity Recogniotion", //required
-	"description": "Spyware!!!!!!1!",
-	"icons":
-	{
-		"16": "images/ext_logo16.png", 
-		"48": "images/ext_logo48.png",
-		"128": "images/ext_logo128.png"
-	},
-	"browser_action":
-	{
-		"default_icon": "images/ext_logo.png",
-		"default_popup": "popup.html"
-	},
-	 "background": {
-		"scripts": ["background.js"],
-		"persistent": false
-	},
-	"permissions": [
-          "webRequest",
-          "https://tsdb.informatik.uni-rostock.de:8086"
-        ],
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Activity Recogniotion",
+  "description": "Spyware!!!!!!1!",
+  "icons": {
+    "16": "images/ext_logo16.png",
+    "48": "images/ext_logo48.png",
+    "128": "images/ext_logo128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/ext_logo.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "https://tsdb.informatik.uni-rostock.de:8086"
+  ]
 }
