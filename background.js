@@ -5,9 +5,11 @@ chrome.runtime.onMessage.addListener(function (message, callback) {
     if (message.type === "start") {
         alert("Hello, " + message.username + "!");
 
-        timer = setInterval(sendCurrentUrl(message.username), 1000)
+
+        timer = setInterval(function () {
+            sendCurrentUrl(message.username)
+        }, 1000)
     }
-    ;
 });
 
 chrome.runtime.onMessage.addListener(function (message, callback) {
