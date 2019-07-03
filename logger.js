@@ -1,7 +1,19 @@
-
 var username = "";
 
+window.onload = function (ev) {
 
+    chrome.storage.local.get(function (items) {
+        if (items.user) {
+            document.getElementById("username").value = items.user;
+        }
+        if (items.started) {
+            changeButtonState(items.started);
+        }
+
+    });
+
+
+};
 document.addEventListener('DOMContentLoaded', function () {
     var link = document.getElementById('start');
     // onClick's logic below:
@@ -26,6 +38,8 @@ function start() {
         return
     }
 
+    chrome.storage.local.set({started: true, user: username});
+
     chrome.runtime.sendMessage({type: "start", username: username}, function (response) {
         console.log("name sent !!!");
     });
@@ -37,6 +51,9 @@ function stop() {
     chrome.runtime.sendMessage({type: "stop"}, function (response) {
 
     });
+
+    chrome.storage.local.set({started: false});
+    chrome.storage.local.remove("user");
 
     changeButtonState(false);
 }

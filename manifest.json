@@ -21,6 +21,7 @@
   "permissions": [
     "tabs",
     "webRequest",
+    "storage",
     "https://tsdb.informatik.uni-rostock.de:8086"
   ]
 }
